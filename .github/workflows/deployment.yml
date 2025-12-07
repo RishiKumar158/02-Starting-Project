@@ -1,12 +1,12 @@
 name: Deploy Project
-on: [push, workflow_dispatch]
+on: [ push, workflow_dispatch ]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
+      - name: Checkout Code
         uses: actions/checkout@v6
-      - name: Install NodeJS
+      - name: Installe Node 18
         uses: actions/setup-node@v6
         with:
           node-version: '18'
@@ -18,9 +18,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Get code
+      - name: Checkout Code
         uses: actions/checkout@v6
-      - name: Install NodeJS
+      - name: Install Node 18
         uses: actions/setup-node@v6
         with:
           node-version: '18'
